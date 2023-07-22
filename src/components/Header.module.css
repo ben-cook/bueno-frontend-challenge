@@ -1,0 +1,11 @@
+header {
+	max-height: 82px;
+	background-color: var(--color-red);
+	display: flex;
+	justify-content: center;
+}
+
+.logo {
+	margin-top: 25px;
+	max-height: 90px;
+}
