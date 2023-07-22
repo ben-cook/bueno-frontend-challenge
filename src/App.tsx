@@ -50,7 +50,7 @@ function App() {
 						</button>
 					</div>
 				</div>
-				<PokemonTable pokemons={pokemons} />
+				<PokemonTable pokemons={pokemons} selectedFilters={selectedFilters} />
 			</main>
 		</>
 	);

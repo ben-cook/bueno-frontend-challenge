@@ -36,9 +36,19 @@ const getPokemonStat = (pokemon: Pokemon, statName: StatName) => {
 
 interface PokemonTableProps {
 	pokemons: Array<Pokemon>;
+	selectedFilters: Array<string>;
 }
 
-export const PokemonTable = ({ pokemons }: PokemonTableProps) => {
+export const PokemonTable = ({
+	pokemons,
+	selectedFilters,
+}: PokemonTableProps) => {
+	const filteredPokemons =
+		selectedFilters.length === 0
+			? pokemons
+			: pokemons.filter((pokemon) =>
+					pokemon.types.some((type) => selectedFilters.includes(type.type_name))
+			  );
 	return (
 		<table>
 			<thead>
@@ -51,7 +61,7 @@ export const PokemonTable = ({ pokemons }: PokemonTableProps) => {
 				</tr>
 			</thead>
 			<tbody>
-				{pokemons.map((pokemon) => (
+				{filteredPokemons.map((pokemon) => (
 					<tr key={pokemon.id}>
 						<td className={styles.pokemonName}>
 							<div className={styles.pokemonImageWrapper}>
@@ -61,7 +71,10 @@ export const PokemonTable = ({ pokemons }: PokemonTableProps) => {
 						</td>
 						<td className={styles.pokemonTypes}>
 							{pokemon.types.map((type) => (
-								<Tag name={type.type_name} />
+								<Tag
+									name={type.type_name}
+									active={selectedFilters.includes(type.type_name)}
+								/>
 							))}
 						</td>
 						{statistics.map(({ statName }) => (
