@@ -2,7 +2,7 @@ import "css-wipe";
 import { useState } from "react";
 import styles from "./App.module.css";
 import { Header } from "./components/Header";
-import { Tag } from "./components/Tag";
+import { Filter } from "./components/Tag";
 import jsonData from "./data/pokemon-gen1.json";
 import type { Pokemon } from "./types";
 import { PokemonTable } from "./components/PokemonTable";
@@ -38,7 +38,7 @@ function App() {
 					<h1 className={styles.title}>Find Pokémon to build your team!</h1>
 					<div className={styles.filterContainer}>
 						{pokemonTypes.map((pokemonType) => (
-							<Tag
+							<Filter
 								key={pokemonType}
 								name={pokemonType}
 								active={selectedFilters.includes(pokemonType)}
