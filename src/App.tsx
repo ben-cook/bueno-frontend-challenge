@@ -5,12 +5,13 @@ import { Header } from "./components/Header";
 import { Tag } from "./components/Tag";
 import jsonData from "./data/pokemon-gen1.json";
 import type { Pokemon } from "./types";
+import { PokemonTable } from "./components/PokemonTable";
 
-const data = jsonData as Pokemon[];
+const pokemons = jsonData as Pokemon[];
 
 const pokemonTypes = [
 	...new Set(
-		data.flatMap((pokemon) => pokemon.types.map((type) => type.type_name))
+		pokemons.flatMap((pokemon) => pokemon.types.map((type) => type.type_name))
 	),
 ];
 
@@ -49,7 +50,7 @@ function App() {
 						</button>
 					</div>
 				</div>
-				<div className={styles.listContainer}>Pokemon here!</div>
+				<PokemonTable pokemons={pokemons} />
 			</main>
 		</>
 	);

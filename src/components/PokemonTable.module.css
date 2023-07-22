@@ -1,0 +1,20 @@
+table {
+	display: grid;
+	grid-template-columns: 25% 25% repeat(6, 1fr);
+}
+
+thead {
+	display: contents;
+
+	font-size: 13px;
+	line-height: 14px;
+	text-align: left;
+}
+
+tr {
+	display: contents;
+}
+
+.textLeft {
+	text-align: left;
+}
