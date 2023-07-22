@@ -53,7 +53,12 @@ export const PokemonTable = ({ pokemons }: PokemonTableProps) => {
 			<tbody>
 				{pokemons.map((pokemon) => (
 					<tr key={pokemon.id}>
-						<td className={styles.pokemonName}>{pokemon.name}</td>
+						<td className={styles.pokemonName}>
+							<div className={styles.pokemonImageWrapper}>
+								<img src={pokemon.sprite.front_url} alt={pokemon.name} />
+							</div>
+							<span>{pokemon.name}</span>
+						</td>
 						<td className={styles.pokemonTypes}>
 							{pokemon.types.map((type) => (
 								<Tag name={type.type_name} />
