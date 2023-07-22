@@ -72,6 +72,7 @@ export const PokemonTable = ({
 						<td className={styles.pokemonTypes}>
 							{pokemon.types.map((type) => (
 								<Tag
+									key={type.type_name}
 									name={type.type_name}
 									active={selectedFilters.includes(type.type_name)}
 								/>
