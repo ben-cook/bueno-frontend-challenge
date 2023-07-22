@@ -1,10 +1,10 @@
 import "css-wipe";
+import { useState } from "react";
 import styles from "./App.module.css";
-import jsonData from "./data/pokemon-gen1.json";
-import type { Pokemon } from "./types";
 import { Header } from "./components/Header";
 import { Tag } from "./components/Tag";
-import { useState } from "react";
+import jsonData from "./data/pokemon-gen1.json";
+import type { Pokemon } from "./types";
 
 const data = jsonData as Pokemon[];
 
@@ -27,6 +27,8 @@ function App() {
 		}
 	};
 
+	const clearFilters = () => setSelectedFilters([]);
+
 	return (
 		<>
 			<Header />
@@ -40,6 +42,9 @@ function App() {
 							onClick={createFilterClickHandler(pokemonType)}
 						/>
 					))}
+					<button className={styles.clearButton} onClick={clearFilters}>
+						Clear all
+					</button>
 				</div>
 				<div className={styles.listContainer}>Pokemon here!</div>
 			</main>

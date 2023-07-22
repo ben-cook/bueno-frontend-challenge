@@ -1,15 +1,21 @@
-.tag {
+.baseTag {
 	height: 32px;
 	padding: 8px 12px;
 
+	border-radius: 16px;
+
+	text-align: center;
+	user-select: none;
+}
+
+.tag {
+	composes: baseTag;
+
 	border-width: 1px;
 	border-style: solid;
-	border-radius: 16px;
 
 	font-size: 14px;
 	line-height: 14px;
 	font-weight: 700;
-	text-align: center;
 	text-transform: capitalize;
-	user-select: none;
 }

@@ -12,6 +12,18 @@
 	overflow: auto;
 }
 
+.clearButton {
+	composes: baseTag from "./components/Tag.module.css";
+	border: none;
+	background-color: var(--color-white);
+	color: var(--color-neutral);
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 14px;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
 .listContainer {
 	background-color: var(--color-white);
 	padding: 10px;
