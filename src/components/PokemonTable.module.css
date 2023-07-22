@@ -8,11 +8,59 @@ thead {
 
 	font-size: 13px;
 	line-height: 14px;
-	text-align: left;
+	text-align: center;
 }
 
-tr {
+thead > tr {
 	display: contents;
+}
+
+thead > tr > td {
+	margin-bottom: 16px;
+}
+
+tbody {
+	grid-column: 1 / 9;
+
+	background-color: var(--color-white);
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+		0px 3px 1px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
+	text-align: center;
+	display: grid;
+	grid-template-columns: 25% 25% repeat(6, 1fr);
+}
+
+tbody > tr {
+	grid-column: 1 / 9;
+
+	height: 80px;
+
+	display: grid;
+	grid-template-columns: 25% 25% repeat(6, 1fr);
+}
+
+.pokemonName {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 4px;
+}
+
+.pokemonTypes {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 4px;
+}
+
+.statistic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .textLeft {

@@ -1,5 +1,6 @@
 import { Pokemon, StatName } from "../types";
 import styles from "./PokemonTable.module.css";
+import { Tag } from "./Tag";
 
 const statistics = [
 	{
@@ -28,6 +29,11 @@ const statistics = [
 	},
 ] satisfies Array<{ displayName: string; statName: StatName }>;
 
+const getPokemonStat = (pokemon: Pokemon, statName: StatName) => {
+	return pokemon.stats.filter((stat) => stat.stat_name === statName).at(0)
+		?.base_stat;
+};
+
 interface PokemonTableProps {
 	pokemons: Array<Pokemon>;
 }
@@ -44,6 +50,39 @@ export const PokemonTable = ({ pokemons }: PokemonTableProps) => {
 					))}
 				</tr>
 			</thead>
+			<tbody>
+				{pokemons.map((pokemon) => (
+					<tr key={pokemon.id}>
+						<td className={styles.pokemonName}>{pokemon.name}</td>
+						<td className={styles.pokemonTypes}>
+							{pokemon.types.map((type) => (
+								<Tag name={type.type_name} />
+							))}
+						</td>
+						{statistics.map(({ statName }) => (
+							<Statistic
+								key={statName}
+								value={getPokemonStat(pokemon, statName)}
+							/>
+						))}
+					</tr>
+				))}
+			</tbody>
 		</table>
+	);
+};
+
+interface StatisticProps {
+	value?: number;
+}
+
+const Statistic = ({ value }: StatisticProps) => {
+	return (
+		<td
+			className={styles.statistic}
+			style={{ color: value && value >= 90 ? `var(--color-red)` : undefined }}
+		>
+			{value}
+		</td>
 	);
 };
