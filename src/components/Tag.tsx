@@ -1,7 +1,7 @@
 import { type ElementType } from "react";
 import styles from "./Tag.module.css";
 
-/** TagProps is not a completely accurate type definition, because it always extends HTMLDivElement. */
+/** TagProps is not a completely accurate type definition, because it always extends HTMLDivElement but the rendered component is not always a div. */
 interface TagProps
 	extends React.DetailedHTMLProps<
 		React.HTMLAttributes<HTMLDivElement>,
