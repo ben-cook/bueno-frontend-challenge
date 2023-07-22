@@ -38,7 +38,6 @@ tbody {
 
 tbody > tr {
 	grid-column: 1 / 9;
-	padding-left: 16px;
 
 	height: 80px;
 
@@ -60,6 +59,7 @@ tbody > tr:not(:last-child) {
 	gap: 16px;
 	font-size: 21px;
 	line-height: 24px;
+	padding-left: 16px;
 }
 
 .pokemonImageWrapper {
