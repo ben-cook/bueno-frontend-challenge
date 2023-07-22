@@ -5,6 +5,7 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+	margin-bottom: 32px;
 }
 
 thead {
@@ -27,7 +28,6 @@ tbody {
 	grid-column: 1 / 9;
 
 	background-color: var(--color-white);
-	padding: 10px;
 	border-radius: 8px;
 	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
 		0px 3px 1px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
@@ -38,11 +38,18 @@ tbody {
 
 tbody > tr {
 	grid-column: 1 / 9;
+	padding-left: 16px;
 
 	height: 80px;
 
 	display: grid;
 	grid-template-columns: 25% 25% repeat(6, 1fr);
+}
+
+tbody > tr:not(:last-child) {
+	border-bottom: 1px;
+	border-color: var(--color-gray);
+	border-style: solid;
 }
 
 .pokemonName {
