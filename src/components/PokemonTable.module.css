@@ -75,6 +75,7 @@ tbody > tr:not(:last-child) {
 
 .pokemonImageWrapper > img {
 	width: 60px;
+	height: 57px;
 }
 
 .pokemonTypes {
@@ -83,6 +84,7 @@ tbody > tr:not(:last-child) {
 	justify-content: flex-start;
 	align-items: center;
 	gap: 4px;
+	overflow: auto;
 }
 
 .statistic {
