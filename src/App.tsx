@@ -33,18 +33,21 @@ function App() {
 		<>
 			<Header />
 			<main className={styles.content}>
-				<div className={styles.filterContainer}>
-					{pokemonTypes.map((pokemonType) => (
-						<Tag
-							key={pokemonType}
-							name={pokemonType}
-							active={selectedFilters.includes(pokemonType)}
-							onClick={createFilterClickHandler(pokemonType)}
-						/>
-					))}
-					<button className={styles.clearButton} onClick={clearFilters}>
-						Clear all
-					</button>
+				<div className={styles.coreInteractions}>
+					<h1 className={styles.title}>Find Pokémon to build your team!</h1>
+					<div className={styles.filterContainer}>
+						{pokemonTypes.map((pokemonType) => (
+							<Tag
+								key={pokemonType}
+								name={pokemonType}
+								active={selectedFilters.includes(pokemonType)}
+								onClick={createFilterClickHandler(pokemonType)}
+							/>
+						))}
+						<button className={styles.clearButton} onClick={clearFilters}>
+							Clear all
+						</button>
+					</div>
 				</div>
 				<div className={styles.listContainer}>Pokemon here!</div>
 			</main>

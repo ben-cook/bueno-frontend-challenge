@@ -3,6 +3,22 @@
 	margin-top: 32px;
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
+.coreInteractions {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.title {
+	font-family: Arial;
+	font-size: 27px;
+	line-height: 31px;
+	text-align: center;
 }
 
 .filterContainer {
